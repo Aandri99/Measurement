@@ -7,8 +7,18 @@ In this course, we will learn how to calculate the systematic error of different
 
 Background
 ---------------
-
-Experiment
+Charge/disscharge time method
 ---------------
+Bridge method
+---------------
+Resonance method
+----------------
+Capacitor tolerance measuring uncertainty
+----------------
+Bridge Experiment
+---------------
+Charge time experiment
+---------------
+
 
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
