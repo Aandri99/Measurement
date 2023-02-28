@@ -45,9 +45,6 @@ Instrument uncertainty experiment
 -----------------------------
 
 
-A non-inverting amplifier - the experiment
-------------------------------------------------------
-
 
 Written by Luka Pogačnik
 
