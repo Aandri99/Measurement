@@ -25,11 +25,11 @@ Effect of element tolerance on uncertainty
 -----------------
 
 
-Measuring instrument error
+Measurement instrument error
 -----------------
 
 
-Measuring method error
+Measurement method error
 -----------------
 
 Outside noise error
