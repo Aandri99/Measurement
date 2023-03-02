@@ -45,19 +45,33 @@ Experiment: Measuring Tolerance
 -------------------
 In this experiment, we will measure the tolerance of a resistor using a Red Pitaya board. We will apply a known voltage across the resistor and measure the resulting current, then calculate the resistance using Ohm's Law:
 
-..math:: R = \frac{V}{I}
+.. math:: R = \frac{V}{I}
 
 We will repeat the measurement several times to obtain an estimate of the tolerance.
 The measurements are as follows:
+
 995 Ω 1001 Ω990 Ω 1004 Ω 1002 Ω 998 Ω 1003 Ω 1000 Ω 1005 Ω 997 Ω
+
 To determine the uncertainty due to random error, we will calculate the standard deviation of these measurements:
-σ = sqrt(1/(n-1) * sum((x_i - x_bar)^2))
+
+.. math:: \sigma = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n}(x_i - \bar{x})^2}
+
+.. math:: \begin{aligned} \bar{x} &= \frac{x_1 + x_2 + ... + x_{10}}{n} \ &= \frac{995 + 1001 + ... + 997}{10} \ &= 1000 \ \Omega \end{aligned}
+
+.. math:: \begin{aligned} \sigma &= \sqrt{\frac{1}{10-1} ((995-1000)^2 + (1001-1000)^2 + ... + (997-1000)^2)} \ &= 5.13 \ \Omega \end{aligned}
+
 Where:
-σ is the standard deviation
-n is the number of measurements
-x_i is the i-th measurement
-x_bar is the mean of the measurements
-..math::σ = sqrt(1/(10-1) * ((995-1000)^2 + (1001-1000)^2 + ... + (997-1000)^2)) = 5.13 Ω
+
+:math:\sigma is the standard deviation
+
+:math:n is the number of measurements
+
+:math:x_i is the i-th measurement
+
+:math:\bar{x} is the mean of the measurements
+
+The standard deviation of 5.13 Ω indicates the range of values that the true resistance may fall within with a given level of confidence.
+
 
 Conclusion
 -----------------------------
