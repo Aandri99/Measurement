@@ -11,11 +11,6 @@ Video Lecture: Introduction to Measuring Uncertainty
 ----------------
 
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/uCvupQx2Gsg" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-
 Background
 ---------------
 Measurement uncertainty is the doubt that exists in a measured value due to limitations and imperfections in the measurement process. In this course, we will discuss several sources of measurement uncertainty, including random and systematic errors, element tolerance, measurement instrument error, measurement method error, and outside noise error.
@@ -51,36 +46,22 @@ Experiment: Resistor tolerances
 
 Resistor tolerances refer to the range of values within which the actual resistance of a resistor can deviate from its nominal or labeled value. Resistor tolerances are expressed as a percentage of the nominal value and typically range from 1% to 20%. For example, a 1 kΩ resistor with a tolerance of 5% can have an actual resistance between 950 Ω and 1,050 Ω. Resistor tolerances are important to consider in electronic circuit design, as they can affect the accuracy and reliability of the circuit.
 
-To investigate how wiring the resistors in parallel affects the measurement, we will wire the ten resistors in parallel and measure the effective resistance using the Red Pitaya board. The nominal value of the resistors is 1000 Ω with a tolerance of ±5%.
-
-The measurements of each individual resistor are as follows:
-Resistor 1: 995 Ω,
-Resistor 2: 1001 Ω,
-Resistor 3: 990 Ω,
-Resistor 4: 1004 Ω,
-Resistor 5: 1002 Ω,
-Resistor 6: 998 Ω,
-Resistor 7: 1003 Ω,
-Resistor 8: 1000 Ω,
-Resistor 9: 1005 Ω,
-Resistor 10: 997 Ω
-
-As we can see from the above results, our vendor really provided us with resistors in the specified tolerance range.
-
-Experiment: Measuring Uncertainty Due to Random Error
--------------------
-First, we will set up the Red Pitaya board to measure resistance. Using Ohm's law, we will measure the voltage across one resistor and the current through it to calculate the resistance.
+First, we will need to set up the Red Pitaya board to measure resistance. We will use the onboard ADC to measure the voltage across the resistor and the current through it. By applying Ohm's law, we can calculate the resistance:
 
 .. math:: R = \frac{V}{I}
 
-We will repeat the same measurement on the same resistor several times to obtain an estimate of the tolerance.
+Note that the nominal value of the measured resistors is 1000 Ω with a tolerance of ±5%. The measurements of each individual resistor are as follows:
+982 Ω, 1032 Ω, 1020 Ω, 1030 Ω, 1002 Ω, 978 Ω, 1033 Ω, 1020 Ω, 1966 Ω, 997 Ω
+
+As we can see from the above results, our vendor really provided us with resistors in the specified tolerance range, as non of the measured resistors are above 1050 or bellow 950 ohms.
+
+Experiment: Measuring Uncertainty Due to Random Error
+-------------------
+To demonstrate how uncertainty can be measured experimentally, we will use the same setup on Red pitaya as before, with the difference that we will only be measuring one resistor multiple times.
+
 The measurements are as follows:
 
-+-----+-----+-----+-----+------+------+-----+------+------+------+
-| | meas.| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-+=====+======+=====+=====+=====+======+======+=====+======+======+======+
-| Res.| 995 Ω| 998 Ω| 997 Ω| 996 Ω| 1000 Ω| 1001 Ω| 999 Ω| 1002 Ω| 1003 Ω| 1001 Ω|
-+-----+------+------+-----+------+------+------+------+------+------+------+
+995 Ω, 998 Ω, 997 Ω, 996 Ω, 1000 Ω, 1001 Ω, 999 Ω, 1002 Ω, 1003 Ω, 1001 Ω
 
 To determine the uncertainty due to random error, we will calculate the standard deviation of these measurements:
 
