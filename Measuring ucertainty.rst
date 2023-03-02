@@ -76,16 +76,11 @@ First, we will set up the Red Pitaya board to measure resistance. Using Ohm's la
 We will repeat the same measurement on the same resistor several times to obtain an estimate of the tolerance.
 The measurements are as follows:
 
-Measurement 1: 995 Ω,
-Measurement 2: 998 Ω,
-Measurement 3: 997 Ω,
-Measurement 4: 996 Ω,
-Measurement 5: 1000 Ω,
-Measurement 6: 1001 Ω,
-Measurement 7: 999 Ω,
-Measurement 8: 1002 Ω,
-Measurement 9: 1003 Ω,
-Measurement 10: 1001 Ω,
++-----+-----+-----+-----+------+------+-----+------+------+------+
+| | meas.| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
++=====+======+=====+=====+=====+======+======+=====+======+======+======+
+| Res.| 995 Ω| 998 Ω| 997 Ω| 996 Ω| 1000 Ω| 1001 Ω| 999 Ω| 1002 Ω| 1003 Ω| 1001 Ω|
++-----+------+------+-----+------+------+------+------+------+------+------+
 
 To determine the uncertainty due to random error, we will calculate the standard deviation of these measurements:
 
