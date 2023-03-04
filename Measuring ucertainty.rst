@@ -1,11 +1,11 @@
-Measuring ucertainty
+Measuring uncertainty
 ============================
 
 Objective
 ---------------
 In this course, we will delve into the concept of measurement uncertainty and explore the various factors that affect the amount of certainty in a measurement.
 
-.. raw:: html
+.. raw:: HTML
 
 Video Lecture: Introduction to Measuring Uncertainty
 ----------------
@@ -17,21 +17,21 @@ Measurement uncertainty is the doubt that exists in a measured value due to limi
 
 Random Error: A Major Source of Uncertainty
 -----------------
-Random error, also known as statistical error, is one of the major sources of uncertainty in any measurement process. It is caused by factors that are difficult or impossible to control, such as fluctuations in temperature, pressure, or voltage, and measurement instrument noise. These unpredictable and random fluctuations affect the measurements, causing them to deviate from the true value.
+Random error, also known as statistical error, is one of the major sources of uncertainty in any measurement process. It is caused by factors that are difficult or impossible to control, such as fluctuations in temperature, pressure, or voltage and measurement instrument noise. These unpredictable and random fluctuations affect the measurements, causing them to deviate from the true value.
 
 Random error can be reduced by performing multiple measurements and averaging the results. The average of multiple measurements tends to be closer to the true value than a single measurement. The variability of the individual measurements is reduced when the average is calculated, leading to a more accurate result.
 
-It's important to note that reducing random error does not eliminate uncertainty in the measurements entirely. There are other sources of uncertainty, such as systematic errors.
+It's important to note that reducing random error does not eliminate uncertainty in the measurements. There are other sources of uncertainty, such as systematic errors.
 
 Systematic Error: A Systematic Deviation from the True Value
 -----------------
-Systematic error, unlike random error, is a constant deviation from the true value that occurs in every measurement. It is caused by factors such as a miscalibrated instrument, a biased measurement method, or environmental conditions that affect the measurement process, errors which are coming up next.
+Systematic error, unlike random error, is a constant deviation from the true value that occurs in every measurement. It is caused by factors such as a miscalibrated instrument, a biased measurement method, environmental conditions that affect the measurement process, and errors that are coming up next.
 
 Effect of element tolerance on uncertainty
 -----------------
-For example, a resistor with a nominal value of 1 kΩ and a tolerance of 5% may have an actual value of anywhere between 950 Ω and 1050 Ω. If this resistor is used in a circuit to measure resistance, the actual value of the resistor will affect the measurement result, leading to an uncertainty in the measurement.
+For example, a resistor with a nominal value of 1 kΩ and a tolerance of 5% may have an actual value of anywhere between 950 Ω and 1050 Ω. If this resistor is used in a circuit to measure resistance, the actual value of the resistor will affect the measurement result, leading to uncertainty in the measurement.
 
-To minimize the effect of element tolerance on measurement uncertainty, it is important to use elements with tight tolerances, or to calibrate the elements to their actual values before use. This can be done by measuring the actual values of the elements using precision instruments and adjusting the circuit parameters accordingly.
+To minimize the effect of element tolerance on measurement uncertainty, it is important to use elements with tight tolerances or to calibrate the elements to their actual values before use. This can be done by measuring the actual values of the elements using precision instruments and adjusting the circuit parameters accordingly.
 
 Measurement instrument error
 -----------------
@@ -50,10 +50,10 @@ First, we will need to set up the Red Pitaya board to measure resistance. We wil
 
 .. math:: R = \frac{V}{I}
 
-Note that the nominal value of the measured resistors is 1000 Ω with a tolerance of ±5%. The measurements of each individual resistor are as follows:
+Note that the nominal value of the measured resistors is 1000 Ω with a tolerance of ±5%. The measurements of each resistor are as follows:
 982 Ω, 1032 Ω, 1020 Ω, 1030 Ω, 1002 Ω, 978 Ω, 1033 Ω, 1020 Ω, 1966 Ω, 997 Ω
 
-As we can see from the above results, our vendor really provided us with resistors in the specified tolerance range, as non of the measured resistors are above 1050 or bellow 950 ohms.
+As we can see from the above results, our vendor provided us with resistors in the specified tolerance range, as non of the measured resistors are above 1050 or below 950 ohms.
 
 Experiment: Measuring Uncertainty Due to Random Error
 -------------------
