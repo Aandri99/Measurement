@@ -44,18 +44,18 @@ where f is the frequency of the applied voltage, R is the resistance, and φ is 
 Experiment 1: Measuring Capacitance using Red Pitaya and Charge-Discharge Method
 -------------
 In this experiment, we will use the charge-discharge method to measure the capacitance of a capacitor using the Red Pitaya board.
-Wire a 1kΩ resistor in series with the capacitor to be measured and connect it to Red pitaya 3.3V. Add a switch pararell to the capacitor so we can charge and discharge it and connect oscilloscope probes to the capacitor so we can observe the voltage behavior. To help with the wiring you can use the picture bellow:
+Wire a 1kΩ resistor in series with the capacitor to be measured and connect it to Red pitaya 3.3V. Add a switch parallel to the capacitor so we can charge and discharge it and connect oscilloscope probes to the capacitor so we can observe the voltage behavior. To help with the wiring you can use the picture below:
 
 
-Now let's close the switch to charge the capacitor and monitor the voltage across the capacitor. When capacitor is fully charged, connect the probes to resistor, open the switch so the capacitor discharges through the resistor. Monitor the voltage acor the resistor using Red Pitaya oscilloscope, read the time discharge time tau, and we can calculate the capacitor value using the following equation:
+Now let's close the switch to charge the capacitor and monitor the voltage across the capacitor. When the capacitor is fully charged, connect the probes to the resistor, and open the switch so the capacitor discharges through the resistor. Monitor the voltage across the resistor using Red Pitayas oscilloscope, read the time discharge time tau, and we can calculate the capacitor value using the following equation:
 
 .. math:: C= \frac{\tau}{R}
 
 Experiment 2: Uncertainty in Capacitance Measuring using Red Pitaya
 --------------------
-In any measurement, it is important to consider the uncertainty associated with the measurement. In this experiment, we will investigate the uncertainty in capacitance measurement using the Red Pitaya board. We will use the same circuit as before, repeating the measurements multiple times and record measured values.
+In any measurement, it is important to consider the uncertainty associated with the measurement. In this experiment, we will investigate the uncertainty in capacitance measurement using the Red Pitaya board. We will use the same circuit as before, repeating the measurements multiple times and recording measured values.
 
-Using the previous experiment procedure, we measured the capacitance of a 10 µF capacitor five times and obtained the following values: 9.8 µF, 10.1 µF, 9.9 µF, 10.2 µF, 10.0 µF. The results of measurements may vary, becouse of the outside noise and improperly calibrated instrument.
+Using the previous experiment procedure, we measured the capacitance of a 10 µF capacitor five times and obtained the following values: 9.8 µF, 10.1 µF, 9.9 µF, 10.2 µF, 10.0 µF. The results of measurements may vary, because of the outside noise and improperly calibrated instruments.
 To calculate the standard deviation of a set of measurements, we first calculate the mean value of the measurements:
 
 .. math:: \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
