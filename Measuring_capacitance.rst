@@ -76,4 +76,6 @@ Conclusion
 ------------
 Capacitance measurement is an essential part of electronic circuit design and testing. It is essential to consider the various sources of measurement error, including stray capacitance, parasitic capacitance, and measurement instrument limitations, when performing capacitance measurements. 
 
+Written by Andraž Pirc
+
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
