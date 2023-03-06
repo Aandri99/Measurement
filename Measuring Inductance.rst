@@ -1,4 +1,4 @@
-OpAmps 101
+Measuring inductance
 ============================
 
 Objective
