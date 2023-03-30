@@ -147,13 +147,16 @@ The bridge measurement method is based on the principle of a balanced bridge cir
 Advantages:
 
 *High accuracy and precision.
+
 *Suitable for a wide range of inductance values.
+
 *Applicable to both low and high-frequency measurements.
 
 
 Disadvantages:
 
 *Can be time-consuming due to manual adjustments.
+
 *Requires a stable and accurate reference component.
 
 
@@ -190,12 +193,15 @@ L in parallel circuit:
 Advantages:
 
 *Simple and cost-effective method.
+
 *Suitable for measuring small inductances.
+
 *Offers good accuracy.
 
 Disadvantages:
 
 *Limited to a specific frequency range.
+
 *May require additional instruments, such as frequency counters or oscilloscopes, to measure the resonant frequency.
 
 
