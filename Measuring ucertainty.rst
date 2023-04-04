@@ -53,44 +53,57 @@ For example, in neuroscience research, electroencephalography (EEG) is often use
 
 In addition to external factors, outside noise error can also be caused by limitations in the measurement equipment or methods. For example, if the resolution of a sensor is not sufficient to detect small changes in the measurement signal, this can lead to measurement uncertainty and errors. To minimize these types of errors, researchers and engineers must carefully select and calibrate their measurement equipment, and use appropriate statistical techniques to quantify and control measurement uncertainty. By minimizing outside noise error, researchers and engineers can improve the accuracy and precision of their measurements, and reduce the likelihood of erroneous conclusions or decisions based on flawed data.
 
-Experiment: Resistor tolerances
-------------------
-
-Resistor tolerances refer to the range of values within which the actual resistance of a resistor can deviate from its nominal or labeled value. Resistor tolerances are expressed as a percentage of the nominal value and typically range from 1% to 20%. For example, a 1 kΩ resistor with a tolerance of 5% can have an actual resistance between 950 Ω and 1,050 Ω. Resistor tolerances are important to consider in electronic circuit design, as they can affect the accuracy and reliability of the circuit.
-
-First, we will need to set up the Red Pitaya board to measure resistance. We will use the onboard ADC to measure the voltage across the resistor and the current through it. By applying Ohm's law, we can calculate the resistance:
-
-.. math:: R = \frac{V}{I}
-
-Note that the nominal value of the measured resistors is 1000 Ω with a tolerance of ±5%. The measurements of each resistor are as follows:
-982 Ω, 1032 Ω, 1020 Ω, 1030 Ω, 1002 Ω, 978 Ω, 1033 Ω, 1020 Ω, 1966 Ω, 997 Ω
-
-As we can see from the above results, our vendor provided us with resistors in the specified tolerance range, as non of the measured resistors are above 1050 or below 950 ohms.
-
-Experiment: Measuring Uncertainty Due to Random Error
--------------------
-To demonstrate how uncertainty can be measured experimentally, we will use the same setup on Red pitaya as before, with the difference that we will only be measuring one resistor multiple times.
-
-The measurements are as follows:
-
-995 Ω, 998 Ω, 997 Ω, 996 Ω, 1000 Ω, 1001 Ω, 999 Ω, 1002 Ω, 1003 Ω, 1001 Ω
-
-To determine the uncertainty due to random error, we will calculate the standard deviation of these measurements:
-
-.. math:: \sigma = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n}(x_i - \bar{x})^2}
-
-.. math:: \begin{aligned} \bar{x} &= \frac{x_1 + x_2 + ... + x_{10}}{n} \ &= \frac{995 + 998 + ... + 1001}{10} \ &= 1000 \ \Omega \end{aligned}
-
-.. math:: \begin{aligned} \sigma &= \sqrt{\frac{1}{10-1} ((995-1000)^2 + (998-1000)^2 + ... + (1001-1000)^2)} \ &= 2.34 \ \Omega \end{aligned}
-
-Where ..:math:\sigma is the standard deviation ,..:math:n is the number of measurements ,..:math:x_i is the i-th measurement ,..:math:\bar{x} is the mean of the measurements
-
-The average value of these measurements is 998.2 Ω with a standard deviation of 2.34 Ω.
+Hand on Experiment: Measuring Uncertainty in Voltage Measurement using Red Pitaya
+=====================================
+In scientific experiments, it is important to consider the uncertainty associated with each measurement. The uncertainty is influenced by the quality of the measurement instruments and the accuracy of the circuit being measured. In this experiment, we will use Red Pitaya to measure the uncertainty in voltage measurement using a simple voltage divider circuit.
 
 
-Conclusion
------------------------------
-Measuring physical quantities comes with inherent uncertainty, which is affected by various factors. By understanding and minimizing the sources of uncertainty, we can increase the accuracy of our measurements.
+Connect the two resistors in series on a breadboard, forming a voltage divider circuit. Connect the positive terminal of the voltage source to one end of the resistor chain and the negative terminal to the other end. Connect the Red Pitaya board to the voltage divider circuit using jumper wires, with one input connected to the voltage source and the other input connected to the junction between the two resistors. To power the circuit we will use Red Pitaya's 5V Output pin.
+
+For help with the wiring you can use the image bellow:
+
+
+Open the Red Pitaya oscilloscope app and set the meas function to measure peak voltages. Bellow the graph voltages of resitors should be displayed. Repeat the measurement 10 times, and record the voltage reading displayed by the Red Pitaya each time. Calculate the average voltage reading and the standard deviation of the measurements to determine the uncertainty in the voltage measurement.
+
+Repeat the measurement with the higher value resistor and compare the uncertainties in the two measurements.
+
+**Results**
+
+The voltage divider circuit has R1 = 2kΩ, R2 = 1kΩ, and an input voltage of 5V. We took 10 measurements of the voltage across resistor R1 using Red Pitaya. We got the following readings:
+
+x_R1 = [3.27, 3.29, 3.25, 3.28, 3.26, 3.28, 3.24, 3.27, 3.29, 3.26]
+
+If you are measuring in the HV range of ±20V with a 14-bit resolution, the voltage resolution of your measurement system can be calculated as follows:
+
+The range of the ADC is 2^14 = 16384 levels, which corresponds to the range of the input voltage of ±20V. Therefore, each level of the ADC represents a voltage range of:
+
+Voltage range per level = (±20V) / 16384 = ±0.00122
+
+This means that the voltage resolution of your measurement system is approximately ±0.00122, but we only read the values with 0.01 accuracy to make the calculations simpler.
+
+**Calculating standart deviation**
+
+To calculate the standard deviation for the voltage measurements, we can use the following formula:
+
+.. math:: \text{standard deviation} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - x_{mean})^2}{n - 1}}
+
+where x represents the individual voltage measurements, x_mean is the mean voltage value, n is the number of measurements, and ^2 represents squaring. Using this formula, we can calculate the standard deviation for the 10 measurements of the voltage across R1 as follows:
+
+.. math:: x_{mean} = \frac{3.27 + 3.29 + 3.25 + 3.28 + 3.26 + 3.28 + 3.24 + 3.27 + 3.29 + 3.26}{10} = 3.27\text{V}
+
+Calculate the squared differences from the mean for each measurement:
+
+.. math:: \sum_{i=1}^{n} (x_i - x_{mean})^2 = (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.25 - 3.27)^2 + (3.28 - 3.27)^2 \\
++ (3.26 - 3.27)^2 + (3.28 - 3.27)^2 + (3.24 - 3.27)^2 + (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.26 - 3.27)^2 = 0.02\text{V}^2
+
+Sum the squared differences and divide by the number of measurements minus 1:
+
+
+.. math:: \text{standard deviation} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - x_{mean})^2}{n - 1}} = \sqrt{\frac{0.02\text{V}^2}{10 - 1}} \approx 0.062\text{V}
+
+Therefore, the standard deviation for the 10 measurements of the voltage across R1 is approximately 0.062V.
+
+However, it is important to note that the voltage uncertainty of your measurement system is also affected by other factors, such as noise, calibration accuracy, and stability of the measurement system. These factors can contribute to the overall uncertainty of your voltage measurement, which should be taken into account when analyzing and reporting your measurement results.
 
 
 Written by Andraž Pirc
